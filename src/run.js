@@ -1,11 +1,19 @@
 'use strict';
 const fileDir = process.argv[2];
-const dumbBuffer = (process.argv[3] ? parseFloat(process.argv[3]) : false);
-const bufferLength = (process.argv[4] ? parseInt(process.argv[4]) : 30);
+const dumbBuffer = true;
+const bufferLength = 30000;
 const fs = require('fs');
 var file = fs.readFileSync(fileDir, 'utf8');
 
-const args = '871984567';
+var args = '';
+function getArgs(a) {
+    var args = '';
+    for (var i = 3; i < a.length; i++) {
+        args += a[i] + (i < a.length - 1 ? ' ' : '');
+    }
+    return args;
+}
+args = getArgs(process.argv);
 
 function balanceOut(code, open, closed, index) {
     var openCount = 0;
@@ -180,6 +188,6 @@ function run(code) {
 }
 
 var startTime = new Date().getTime();
-console.log('\n' + run(file));
+console.log('\n' + run(file).subarray(0, 50));
 var endTime = new Date().getTime();
 console.log('\nRunning took: ' + (endTime - startTime) + 'ms');
