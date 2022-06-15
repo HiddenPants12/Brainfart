@@ -16,7 +16,7 @@ Somewhere in sunny California.
 # How?
 Magic.
 # GIVE ME EXAMPLES!
-Well, I recommend going to the /examples directory if you would like examples on the language and its instruction. But here is one example that, some would even say, over-commented code.
+Well, I recommend going to the /examples directory if you would like examples on the language and its instructions. But here is one example that, some would even say, over-commented code.
 
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 $ This is a simple example of a program that multiplies two numbers in Brainfart :)
