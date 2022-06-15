@@ -1,0 +1,5 @@
+$ This is a simple program written in Brainfart that will make a new register/registers and use it. :)
+ecg0 $ Here we are establishing a new register called 'g' and giving it a default value of 0. Keep in mind this doesn't necessarily mean that this takes number literals. It just means that the 0 is a preprogrammed argument possibility...
+$ this is also possible to set the default value as another register or this current pointer as well.
+++++sg>>pg $ Here we are playing with the registers a little bit.
+>eegedg>eeg $ And here we are testing the deletion of the register 'g'. As well as testing the exists ('e') argument of the establish command.

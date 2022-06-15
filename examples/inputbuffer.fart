@@ -1,0 +1,2 @@
+$ This is a simple example program that will loop through every input and print it, it will also store the amount of stuff in the input buffer and write that at the beginning of the buffer, then it will terminate. Written in Brainfart :)
+>,[!a+>,]<[<]paca

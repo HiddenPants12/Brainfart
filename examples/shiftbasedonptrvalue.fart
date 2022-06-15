@@ -1,0 +1,2 @@
+$ This is a simple example program written in Brainfart, that will shift the pointer, based on the value of the current cell. Keep in mind that this will also work with registers. :)
+++++_+t+++
