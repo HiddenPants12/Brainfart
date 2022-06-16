@@ -1,0 +1,6 @@
+$ This is a simple addition program written in the Brainfart language, it will also show the difference between this and the Brainfuck language.
++++++>
+++++>
+<<[>>+<<-]>[>+<-] $ This is addition in the Brainfuck language, LAME. Althouth this is probably not the best way to do this, I just wanted the output to look ok.
+>>+++++sa>++++sb>
+Aab $ This is addition in the Brainfart language, EPIC.
