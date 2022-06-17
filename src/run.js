@@ -174,16 +174,20 @@ function run(code) {
                 i += 2;
                 break;
             case 'm': 
-                var arg1 = code.charAt(i + 1);
-                var arg0 = code.charAt(i + 2);
+                var arg0 = code.charAt(i + 1);
+                var arg1 = code.charAt(i + 2);
+                if (arg1 == 't') {
+                    buffer[ptr] = (arg0 == 't' ? buffer[ptr] : (!isNaN(parseInt(arg0)) ? buffer[ptr + parseInt(arg0)] : registers[arg0]));
+                } else if (!isNaN(parseInt(arg1))) {
+                    buffer[ptr + parseInt(arg1)] = (arg0 == 't' ? buffer[ptr] : (!isNaN(parseInt(arg0)) ? buffer[ptr + parseInt(arg0)] : registers[arg0]));
+                } else {
+                    registers[arg1] = (arg0 == 't' ? buffer[ptr] : (!isNaN(parseInt(arg0)) ? buffer[ptr + parseInt(arg0)] : registers[arg0]));
+                }
                 if (arg0 == 't') {
-                    buffer[ptr] = (arg1 == 't' ? buffer[ptr] : (!isNaN(parseInt(arg1)) ? buffer[ptr + parseInt(arg1)] : registers[arg1]));
                     buffer[ptr] = 0;
                 } else if (!isNaN(parseInt(arg0))) {
-                    buffer[ptr + parseInt(arg0)] = (arg1 == 't' ? buffer[ptr] : (!isNaN(parseInt(arg1)) ? buffer[ptr + parseInt(arg1)] : registers[arg1]));
                     buffer[ptr + parseInt(arg0)] = 0;
                 } else {
-                    registers[arg0] = (arg1 == 't' ? buffer[ptr] : (!isNaN(parseInt(arg1)) ? buffer[ptr + parseInt(arg1)] : registers[arg1]));
                     registers[arg0] = 0;
                 }
                 i += 2;
@@ -193,7 +197,7 @@ function run(code) {
                 if (instruction == ' ' || instruction == '\n' || instruction == '\r') {
                     break;
                 } else {
-                    throw new Error('Unknown instruction: ' + instruction);
+                    throw new Error('Unknown instruction: ' + instruction + ' at position: ' + i);
                 }
         }
     }

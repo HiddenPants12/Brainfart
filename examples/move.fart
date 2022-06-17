@@ -1,0 +1,7 @@
+$ This is a simple example program written in Brainfart that will move a value. It will also show the exact same operation in Brainfuck, to express the contrast.
++++
+mt2 $ Brainfart, EPIC.
+>>>
+++++[>>+<<-] $ Brainfuck, LAME.
+$ Both of these programs do the exact same thing, and are both quite simple. The main difference is readability and speed. But both arent very invasive and dont disrupt the flow of the program. They also don't use any more memory than the from and the to.
+$ The expected output is [0, 0, 3, 0, 0, 4, 0, 0, 0...] :)
