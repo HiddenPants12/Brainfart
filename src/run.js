@@ -173,6 +173,21 @@ function run(code) {
                 }
                 i += 2;
                 break;
+            case 'm': 
+                var arg1 = code.charAt(i + 1);
+                var arg0 = code.charAt(i + 2);
+                if (arg0 == 't') {
+                    buffer[ptr] = (arg1 == 't' ? buffer[ptr] : (!isNaN(parseInt(arg1)) ? buffer[ptr + parseInt(arg1)] : registers[arg1]));
+                    buffer[ptr] = 0;
+                } else if (!isNaN(parseInt(arg0))) {
+                    buffer[ptr + parseInt(arg0)] = (arg1 == 't' ? buffer[ptr] : (!isNaN(parseInt(arg1)) ? buffer[ptr + parseInt(arg1)] : registers[arg1]));
+                    buffer[ptr + parseInt(arg0)] = 0;
+                } else {
+                    registers[arg0] = (arg1 == 't' ? buffer[ptr] : (!isNaN(parseInt(arg1)) ? buffer[ptr + parseInt(arg1)] : registers[arg1]));
+                    registers[arg0] = 0;
+                }
+                i += 2;
+                break;
             default:
                 codeRead--;
                 if (instruction == ' ' || instruction == '\n' || instruction == '\r') {
@@ -183,7 +198,7 @@ function run(code) {
         }
     }
 
-    console.log("Total read: " + codeRead);
+    console.log("Code evaluated: " + codeRead);
     return buffer;
 }
 
