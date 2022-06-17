@@ -1,4 +1,4 @@
-$ This is a simple example program written in Brainfart that will move a value. It will also show the exact same operation in Brainfuck, to express the contrast.
+$ This is a simple example program written in Brainfart that will move a value to the right twice. It will also show the exact same operation in Brainfuck, to express the contrast.
 +++
 mt2 $ Brainfart, EPIC.
 >>>
